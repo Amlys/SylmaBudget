@@ -16,6 +16,7 @@ export default function AddExpenseScreen() {
     amount: 0,
     icon: '☕',
     budgetId: undefined,
+    isRecurring: true,
   });
   const [budgets, setBudgets] = useState<Budget[]>([]);
   const [showBudgetPicker, setShowBudgetPicker] = useState(false);
@@ -53,7 +54,7 @@ export default function AddExpenseScreen() {
         {
           text: 'OK',
           onPress: () => {
-            setFormData({ title: '', amount: 0, icon: '☕', budgetId: undefined });
+            setFormData({ title: '', amount: 0, icon: '☕', budgetId: undefined, isRecurring: true });
             router.navigate('/');
           }
         }
@@ -158,6 +159,25 @@ export default function AddExpenseScreen() {
               )}
             </View>
           )}
+        </View>
+
+        <View style={styles.field}>
+          <Text style={styles.label}>Type de dépense</Text>
+          <TouchableOpacity 
+            style={styles.checkboxContainer}
+            onPress={() => setFormData(prev => ({ ...prev, isRecurring: !prev.isRecurring }))}
+          >
+            <View style={[styles.checkbox, formData.isRecurring && styles.checkboxChecked]}>
+              {formData.isRecurring && <Text style={styles.checkmark}>✓</Text>}
+            </View>
+            <Text style={styles.checkboxLabel}>Dépense récurrente</Text>
+          </TouchableOpacity>
+          <Text style={styles.checkboxDescription}>
+            {formData.isRecurring 
+              ? "Cette dépense pourra être incrémentée (bouton +)"
+              : "Cette dépense sera unique (pas d'incrémentation possible)"
+            }
+          </Text>
         </View>
 
         <View style={styles.field}>
@@ -311,5 +331,40 @@ const styles = StyleSheet.create({
   budgetOptionSubtext: {
     fontSize: 12,
     color: '#6B7280',
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  checkbox: {
+    width: 20,
+    height: 20,
+    borderRadius: 4,
+    borderWidth: 2,
+    borderColor: '#E5E7EB',
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 12,
+  },
+  checkboxChecked: {
+    backgroundColor: '#8B5CF6',
+    borderColor: '#8B5CF6',
+  },
+  checkmark: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
+  checkboxLabel: {
+    fontSize: 16,
+    color: '#1F2937',
+    fontWeight: '500',
+  },
+  checkboxDescription: {
+    fontSize: 14,
+    color: '#6B7280',
+    fontStyle: 'italic',
   },
 });

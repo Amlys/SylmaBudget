@@ -1,7 +1,7 @@
-# Guide Utilisateur - PayAmLys
+# Guide Utilisateur - SylmaBudget
 
 **Version**: 1.0.0  
-**Application**: PayAmLys - Suivi des dépenses  
+**Application**: SylmaBudget - Suivi des dépenses  
 **Dernière mise à jour**: 29 août 2025
 
 ---
@@ -22,7 +22,7 @@
 
 ## Introduction
 
-**PayAmLys** est votre assistant personnel pour le suivi de vos dépenses quotidiennes. Cette application mobile vous permet de :
+**SylmaBudget** est votre assistant personnel pour le suivi de vos dépenses quotidiennes. Cette application mobile vous permet de :
 
 - 📊 Suivre vos dépenses par catégories personnalisées
 - 💰 Créer et gérer des budgets récurrents
@@ -41,7 +41,7 @@
 
 ### Installation et Lancement
 
-1. **Lancement** : Ouvrez l'application PayAmLys sur votre téléphone
+1. **Lancement** : Ouvrez l'application SylmaBudget sur votre téléphone
 2. **Premier aperçu** : L'écran d'accueil affiche vos dépenses récentes
 3. **Configuration** : Aucune configuration initiale n'est requise !
 
@@ -233,7 +233,7 @@ Si aucune dépense n'est trouvée :
 R : Oui, automatiquement sur votre téléphone uniquement. Aucune donnée n'est envoyée sur internet.
 
 **Q : Puis-je utiliser l'app sans internet ?**  
-R : Parfaitement ! PayAmLys fonctionne entièrement hors ligne.
+R : Parfaitement ! SylmaBudget fonctionne entièrement hors ligne.
 
 **Q : Combien de catégories puis-je créer ?**  
 R : Aucune limite technique, mais nous recommandons 10-20 catégories maximum pour rester organisé.
@@ -293,7 +293,7 @@ R : Actuellement limité à 1 an maximum. Fonctionnalité étendue prévue.
 
 Pour toute question ou suggestion :
 
-- **Email** : [support@payamlys.fr] (fictif)
+- **Email** : [support@SylmaBudget.fr] (fictif)
 - **Documentation technique** : Voir `DEVELOPER_GUIDE.md`
 - **Rapport de qualité** : Voir `RAPPORT_PROJECT.md`
 
@@ -312,7 +312,7 @@ Pour toute question ou suggestion :
 
 ## Conclusion
 
-PayAmLys est conçu pour rendre le suivi de vos dépenses **simple et efficace**. 
+SylmaBudget est conçu pour rendre le suivi de vos dépenses **simple et efficace**. 
 
 **Commencez petit** :
 1. Créez 3-5 catégories principales
@@ -320,10 +320,10 @@ PayAmLys est conçu pour rendre le suivi de vos dépenses **simple et efficace**
 3. Utilisez régulièrement pendant une semaine
 4. Analysez vos résultats dans le dashboard
 
-**L'habitude fait la différence** : utilisez PayAmLys régulièrement, même 30 secondes par jour, et vous développerez rapidement une meilleure conscience de vos dépenses.
+**L'habitude fait la différence** : utilisez SylmaBudget régulièrement, même 30 secondes par jour, et vous développerez rapidement une meilleure conscience de vos dépenses.
 
 Bonne gestion financière ! 💰📊
 
 ---
 
-*Ce guide utilisateur couvre toutes les fonctionnalités de PayAmLys v1.0.0. Pour les détails techniques, consultez la documentation développeur.*
+*Ce guide utilisateur couvre toutes les fonctionnalités de SylmaBudget v1.0.0. Pour les détails techniques, consultez la documentation développeur.*

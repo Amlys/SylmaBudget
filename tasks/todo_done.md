@@ -1,4 +1,4 @@
-# TÂCHES COMPLÉTÉES - PayAmLys
+# TÂCHES COMPLÉTÉES - SylmaBudget
 
 ## Analyse et Documentation
 
@@ -8,7 +8,7 @@
 - [x] Création du fichier todo_done.md pour l'historique
 
 ### ✅ Analyse et Documentation Complète (28 août 2025)
-- [x] Analyse en profondeur de l'architecture PayAmLys
+- [x] Analyse en profondeur de l'architecture SylmaBudget
 - [x] Identification des 4 écrans principaux (Accueil, Ajouter, Budget, Dashboard)
 - [x] Analyse du système de stockage dual (expenses + budgets)
 - [x] Compréhension du système de récurrence des budgets

@@ -10,6 +10,7 @@ export interface Expense {
   purchaseDates: string[];
   isArchived?: boolean;
   budgetId?: string;
+  isRecurring?: boolean;
 }
 
 export interface ExpenseFormData {
@@ -17,6 +18,7 @@ export interface ExpenseFormData {
   amount: number;
   icon: string;
   budgetId?: string;
+  isRecurring?: boolean;
 }
 
 export type DateFilter = 'day' | 'week' | 'month' | 'year';

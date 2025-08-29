@@ -1,11 +1,11 @@
-# Guide du Développeur - PayAmLys
+# Guide du Développeur - SylmaBudget
 
 ## Vue d'ensemble du Projet
 
-**PayAmLys** est une application mobile de suivi des dépenses développée avec React Native et Expo. Elle permet aux utilisateurs de créer des catégories de dépenses, de suivre leurs achats récurrents, et de gérer leurs budgets.
+**SylmaBudget** est une application mobile de suivi des dépenses développée avec React Native et Expo. Elle permet aux utilisateurs de créer des catégories de dépenses, de suivre leurs achats récurrents, et de gérer leurs budgets.
 
 ### Informations Générales
-- **Nom**: PayAmLys (AmlysPay)
+- **Nom**: SylmaBudget (AmlysPay)
 - **Version**: 1.0.0
 - **Plateforme cible**: iOS, Android (priorité mobile)
 - **Support web**: Optionnel
@@ -38,7 +38,7 @@
 ### Structure des Dossiers
 
 ```
-payamlys/
+SylmaBudget/
 ├── app/                    # Screens avec Expo Router
 │   ├── (tabs)/            # Navigation par onglets
 │   │   ├── _layout.tsx    # Configuration des onglets
@@ -288,4 +288,4 @@ npm run lint        # Vérification code
 7. **Animations**: React Native Reanimated
 8. **Offline-first**: Sync différée
 
-Cette architecture offre une base solide, extensible et maintenir pour l'évolution future de PayAmLys.
+Cette architecture offre une base solide, extensible et maintenir pour l'évolution future de SylmaBudget.

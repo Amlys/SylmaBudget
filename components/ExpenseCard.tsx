@@ -61,12 +61,14 @@ export function ExpenseCard({ expense, onIncrement, onDelete, onArchive }: Expen
         </Text>
       </View>
       
-      <TouchableOpacity 
-        style={styles.incrementButton}
-        onPress={() => onIncrement(expense.id)}
-      >
-        <Plus size={24} color="#FFFFFF" />
-      </TouchableOpacity>
+      {(expense.isRecurring ?? true) && (
+        <TouchableOpacity 
+          style={styles.incrementButton}
+          onPress={() => onIncrement(expense.id)}
+        >
+          <Plus size={24} color="#FFFFFF" />
+        </TouchableOpacity>
+      )}
     </View>
   );
 }

@@ -1,4 +1,17 @@
-# TODO - PayAmLys
+# TODO - SylmaBudget
+
+## 🚀 En cours - Fonctionnalité Dépenses Récurrentes
+
+### Objectif
+Ajouter un champ "Dépense récurrente" lors de la création d'une dépense. Si une dépense n'est pas marquée comme récurrente, elle ne pourra pas être incrémentée (pas de bouton +).
+
+### Tâches de la fonctionnalité
+- [x] 1. Analyser la demande et planifier l'implémentation
+- [x] 2. Modifier l'interface Expense pour ajouter le champ isRecurring
+- [x] 3. Modifier ExpenseFormData pour ajouter le champ isRecurring
+- [x] 4. Ajouter le checkbox 'Dépense récurrente' dans le formulaire add.tsx
+- [x] 5. Modifier ExpenseCard pour conditionner l'affichage du bouton d'incrémentation
+- [x] 6. Tester la fonctionnalité
 
 ## Prochaines étapes prioritaires (selon RAPPORT_PROJECT.md)
 
@@ -20,7 +33,7 @@
 - [ ] Support multi-devises
 
 ## Notes
-- Projet : Application mobile PayAmLys pour suivi des dépenses
+- Projet : Application mobile SylmaBudget pour suivi des dépenses
 - Framework : React Native avec Expo Router
 - Stockage : AsyncStorage local
 - Interface : Français avec thème violet (#8B5CF6)

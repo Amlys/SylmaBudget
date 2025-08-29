@@ -1,15 +1,15 @@
-# Rapport d'Évaluation Projet - PayAmLys
+# Rapport d'Évaluation Projet - SylmaBudget
 
 ## Informations Générales
 
-**Projet**: PayAmLys - Application de suivi des dépenses  
+**Projet**: SylmaBudget - Application de suivi des dépenses  
 **Version**: 1.0.0  
 **Date d'évaluation**: 28 août 2025  
 **Évaluateur**: Claude Code  
 
 ## Résumé Exécutif
 
-PayAmLys est une application mobile de gestion des dépenses développée avec React Native et Expo. L'application présente une architecture solide, un code bien structuré et une expérience utilisateur cohérente. Le projet montre un niveau de maturité élevé avec des bonnes pratiques bien appliquées.
+SylmaBudget est une application mobile de gestion des dépenses développée avec React Native et Expo. L'application présente une architecture solide, un code bien structuré et une expérience utilisateur cohérente. Le projet montre un niveau de maturité élevé avec des bonnes pratiques bien appliquées.
 
 ## Évaluation par Catégorie
 
@@ -233,7 +233,7 @@ PayAmLys est une application mobile de gestion des dépenses développée avec R
 
 ## Conclusion
 
-PayAmLys est un projet **très bien conçu** avec une architecture solide et un code de qualité. L'application répond aux besoins fonctionnels de base avec une interface utilisateur soignée. Les principales faiblesses concernent l'absence de tests et quelques fonctionnalités manquantes.
+SylmaBudget est un projet **très bien conçu** avec une architecture solide et un code de qualité. L'application répond aux besoins fonctionnels de base avec une interface utilisateur soignée. Les principales faiblesses concernent l'absence de tests et quelques fonctionnalités manquantes.
 
 Le projet est **prêt pour la production** après implémentation des tests et finalisation du dashboard. La base technique est excellente pour supporter l'évolution future de l'application.
 
