@@ -13,6 +13,19 @@ Ajouter un champ "Dépense récurrente" lors de la création d'une dépense. Si 
 - [x] 5. Modifier ExpenseCard pour conditionner l'affichage du bouton d'incrémentation
 - [x] 6. Tester la fonctionnalité
 
+## 🚀 En cours - Sous-onglets Page d'Accueil
+
+### Objectif
+Créer 3 sous-onglets dans la page d'accueil : Dépenses récurrentes, Dépenses uniques, Budgets
+
+### Tâches réalisées
+- [x] 1. Analyser la structure actuelle de la page d'accueil
+- [x] 2. Créer un système de sous-onglets avec navigation
+- [x] 3. Séparer les dépenses récurrentes et uniques
+- [x] 4. Intégrer l'affichage des budgets dans un sous-onglet
+- [x] 5. Adapter les styles pour les sous-onglets
+- [x] 6. Tester la navigation entre les sous-onglets
+
 ## Prochaines étapes prioritaires (selon RAPPORT_PROJECT.md)
 
 ### ✅ Critique - TERMINÉ (29 août 2025)
