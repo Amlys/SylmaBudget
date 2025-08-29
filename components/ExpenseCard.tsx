@@ -34,6 +34,27 @@ export function ExpenseCard({ expense, onIncrement, onDelete, onArchive }: Expen
     );
   };
 
+  // Calcul du budget individuel
+  const hasBudget = expense.budgetAmount && expense.budgetRecurrence;
+  const budgetSpent = expense.budgetSpent || 0;
+  const budgetProgress = hasBudget ? (budgetSpent / expense.budgetAmount!) * 100 : 0;
+  const budgetProgressClamped = Math.min(budgetProgress, 100); // Pour la barre visuelle
+
+  const getBudgetPeriodLabel = (recurrence: string) => {
+    switch (recurrence) {
+      case 'weekly': return 'semaine';
+      case 'monthly': return 'mois';
+      case 'yearly': return 'année';
+      default: return 'période';
+    }
+  };
+
+  const getBudgetProgressColor = (progress: number) => {
+    if (progress <= 50) return '#10B981'; // Vert
+    if (progress <= 80) return '#F59E0B'; // Orange
+    return '#EF4444'; // Rouge
+  };
+
   return (
     <View style={styles.card}>
       <View style={styles.header}>
@@ -59,6 +80,35 @@ export function ExpenseCard({ expense, onIncrement, onDelete, onArchive }: Expen
         <Text style={styles.date}>
           Dernier achat: {dateUtils.formatDate(expense.lastPurchaseAt)}
         </Text>
+        
+        {hasBudget && (
+          <View style={styles.budgetContainer}>
+            <View style={styles.budgetHeader}>
+              <Text style={styles.budgetLabel}>
+                Budget {getBudgetPeriodLabel(expense.budgetRecurrence!)}
+              </Text>
+              <Text style={[styles.budgetPercentage, { color: getBudgetProgressColor(budgetProgress) }]}>
+                {Math.round(budgetProgress)}%
+              </Text>
+            </View>
+            <View style={styles.progressBarContainer}>
+              <View style={styles.progressBarBackground}>
+                <View 
+                  style={[
+                    styles.progressBarFill, 
+                    { 
+                      width: `${budgetProgressClamped}%`,
+                      backgroundColor: getBudgetProgressColor(budgetProgress)
+                    }
+                  ]} 
+                />
+              </View>
+            </View>
+            <Text style={styles.budgetInfo}>
+              {dateUtils.formatCurrency(budgetSpent)} / {dateUtils.formatCurrency(expense.budgetAmount!)}
+            </Text>
+          </View>
+        )}
       </View>
       
       {(expense.isRecurring ?? true) && (
@@ -142,5 +192,44 @@ const styles = StyleSheet.create({
     padding: 12,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  budgetContainer: {
+    marginTop: 12,
+    padding: 12,
+    backgroundColor: '#F9FAFB',
+    borderRadius: 8,
+  },
+  budgetHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  budgetLabel: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: '#6B7280',
+  },
+  budgetPercentage: {
+    fontSize: 14,
+    fontWeight: '700',
+  },
+  progressBarContainer: {
+    marginBottom: 4,
+  },
+  progressBarBackground: {
+    height: 6,
+    backgroundColor: '#E5E7EB',
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  progressBarFill: {
+    height: '100%',
+    borderRadius: 3,
+  },
+  budgetInfo: {
+    fontSize: 11,
+    color: '#9CA3AF',
+    textAlign: 'center',
   },
 });

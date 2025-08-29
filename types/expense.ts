@@ -11,6 +11,11 @@ export interface Expense {
   isArchived?: boolean;
   budgetId?: string;
   isRecurring?: boolean;
+  // Budget individuel de la dépense
+  budgetAmount?: number;
+  budgetRecurrence?: 'weekly' | 'monthly' | 'yearly';
+  budgetPeriod?: string;
+  budgetSpent?: number;
 }
 
 export interface ExpenseFormData {
@@ -19,6 +24,9 @@ export interface ExpenseFormData {
   icon: string;
   budgetId?: string;
   isRecurring?: boolean;
+  // Budget individuel de la dépense (seulement si récurrente)
+  budgetAmount?: number;
+  budgetRecurrence?: 'weekly' | 'monthly' | 'yearly';
 }
 
 export type DateFilter = 'day' | 'week' | 'month' | 'year';

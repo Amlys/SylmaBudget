@@ -26,6 +26,25 @@ Créer 3 sous-onglets dans la page d'accueil : Dépenses récurrentes, Dépenses
 - [x] 5. Adapter les styles pour les sous-onglets
 - [x] 6. Tester la navigation entre les sous-onglets
 
+## ✅ TERMINÉ - Budget Individuel pour Dépenses
+
+### Objectif
+Permettre aux dépenses récurrentes d'avoir leur propre budget avec périodes (hebdomadaire, mensuel, annuel) et afficher une barre de progression dans la carte de dépense.
+
+### Fonctionnalités implémentées
+- [x] 1. Nouveaux champs dans l'interface Expense (budgetAmount, budgetRecurrence, budgetPeriod, budgetSpent)
+- [x] 2. Champs dans le formulaire de création (seulement pour dépenses récurrentes)
+- [x] 3. Logique de gestion des périodes avec refresh automatique
+- [x] 4. Barre de progression dans ExpenseCard avec pourcentage
+- [x] 5. Couleurs adaptatives (vert ≤50%, orange ≤80%, rouge >80%)
+- [x] 6. Gestion du dépassement (pourcentage peut dépasser 100%, barre reste à 100% max)
+
+### Comportement
+- **Création** : Champs budget visibles seulement si dépense récurrente
+- **Périodes** : Hebdomadaire (2024-W52), Mensuel (2024-12), Annuel (2024)
+- **Reset automatique** : Quand la période change, budgetSpent repart à 0
+- **Progression visuelle** : Barre + pourcentage + montant dépensé/budget total
+
 ## Prochaines étapes prioritaires (selon RAPPORT_PROJECT.md)
 
 ### ✅ Critique - TERMINÉ (29 août 2025)

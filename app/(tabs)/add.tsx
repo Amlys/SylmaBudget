@@ -17,6 +17,8 @@ export default function AddExpenseScreen() {
     icon: '☕',
     budgetId: undefined,
     isRecurring: true,
+    budgetAmount: undefined,
+    budgetRecurrence: undefined,
   });
   const [budgets, setBudgets] = useState<Budget[]>([]);
   const [showBudgetPicker, setShowBudgetPicker] = useState(false);
@@ -54,7 +56,7 @@ export default function AddExpenseScreen() {
         {
           text: 'OK',
           onPress: () => {
-            setFormData({ title: '', amount: 0, icon: '☕', budgetId: undefined, isRecurring: true });
+            setFormData({ title: '', amount: 0, icon: '☕', budgetId: undefined, isRecurring: true, budgetAmount: undefined, budgetRecurrence: undefined });
             router.navigate('/');
           }
         }
@@ -179,6 +181,60 @@ export default function AddExpenseScreen() {
             }
           </Text>
         </View>
+
+        {formData.isRecurring && (
+          <View style={styles.field}>
+            <Text style={styles.label}>Budget individuel (optionnel)</Text>
+            
+            <View style={styles.budgetFields}>
+              <View style={styles.budgetAmountContainer}>
+                <Text style={styles.budgetFieldLabel}>Montant (€)</Text>
+                <TextInput
+                  style={styles.budgetInput}
+                  value={formData.budgetAmount?.toString() || ''}
+                  onChangeText={(text) => {
+                    const amount = parseFloat(text) || undefined;
+                    setFormData(prev => ({ ...prev, budgetAmount: amount }));
+                  }}
+                  placeholder="Ex: 100"
+                  placeholderTextColor="#9CA3AF"
+                  keyboardType="numeric"
+                />
+              </View>
+              
+              <View style={styles.budgetPeriodContainer}>
+                <Text style={styles.budgetFieldLabel}>Période</Text>
+                <TouchableOpacity 
+                  style={[styles.budgetInput, styles.budgetPeriodSelector]}
+                  onPress={() => {
+                    // Cycling through periods: undefined -> weekly -> monthly -> yearly -> undefined
+                    const periods: (typeof formData.budgetRecurrence)[] = [undefined, 'weekly', 'monthly', 'yearly'];
+                    const currentIndex = periods.indexOf(formData.budgetRecurrence);
+                    const nextIndex = (currentIndex + 1) % periods.length;
+                    setFormData(prev => ({ ...prev, budgetRecurrence: periods[nextIndex] }));
+                  }}
+                >
+                  <Text style={[styles.budgetSelectorText, !formData.budgetRecurrence && styles.placeholder]}>
+                    {formData.budgetRecurrence === 'weekly' && 'Hebdomadaire'}
+                    {formData.budgetRecurrence === 'monthly' && 'Mensuel'}
+                    {formData.budgetRecurrence === 'yearly' && 'Annuel'}
+                    {!formData.budgetRecurrence && 'Aucun'}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+            
+            <Text style={styles.budgetDescription}>
+              {formData.budgetAmount && formData.budgetRecurrence
+                ? `Budget de ${formData.budgetAmount}€ par ${
+                    formData.budgetRecurrence === 'weekly' ? 'semaine' :
+                    formData.budgetRecurrence === 'monthly' ? 'mois' : 'an'
+                  }`
+                : 'Définissez un budget pour suivre vos dépenses sur cette catégorie'
+              }
+            </Text>
+          </View>
+        )}
 
         <View style={styles.field}>
           <Text style={styles.label}>Icône</Text>
@@ -366,5 +422,44 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#6B7280',
     fontStyle: 'italic',
+  },
+  budgetFields: {
+    flexDirection: 'row',
+    gap: 12,
+    marginBottom: 8,
+  },
+  budgetAmountContainer: {
+    flex: 2,
+  },
+  budgetPeriodContainer: {
+    flex: 3,
+  },
+  budgetFieldLabel: {
+    fontSize: 14,
+    fontWeight: '500',
+    color: '#374151',
+    marginBottom: 4,
+  },
+  budgetInput: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 8,
+    padding: 12,
+    fontSize: 14,
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+    color: '#1F2937',
+  },
+  budgetPeriodSelector: {
+    justifyContent: 'center',
+  },
+  budgetSelectorText: {
+    fontSize: 14,
+    color: '#1F2937',
+  },
+  budgetDescription: {
+    fontSize: 12,
+    color: '#6B7280',
+    fontStyle: 'italic',
+    textAlign: 'center',
   },
 });
